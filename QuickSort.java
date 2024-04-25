@@ -1,11 +1,11 @@
 public class QuickSort {
-	public static int compareNum; //static variables.
-	public static int moveNum;
-	public static void quickSort(int[] list) {
+	public int compareNum; //static variables.
+	public int moveNum;
+	public void quickSort(int[] list) {
 		quickSort(list, 0, list.length-1);
 	}
 	
-	public static void quickSort(int[] list, int first, int last) {
+	public void quickSort(int[] list, int first, int last) {
 		if (last > first) {
 			compareNum++;
 			int pivotIndex = partition(list, first, last);
@@ -15,7 +15,7 @@ public class QuickSort {
 	}
 	
 	/** Partition the array list[first..last] */
-	public static int partition(int[] list, int first, int last) {
+	public int partition(int[] list, int first, int last) {
 		int pivot = list[(first + last) / 2]; // Choose the first element as the pivot
 		int low = first + 1; // Index for forward search
 		int high = last; //Index for backward search

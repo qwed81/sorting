@@ -2,9 +2,9 @@ import java.io.*;
 import java.util.*;
 
 class RadixSort {
-	public static int compareNum; //static variables.
-	public static int moveNum;
-	static int getMax(int arr[], int n) {
+	public int compareNum; //static variables.
+	public int moveNum;
+	int getMax(int arr[], int n) {
 		int mx = arr[0];
 		for (int i = 1; i < n; i++) {
 			compareNum++;
@@ -17,13 +17,16 @@ class RadixSort {
 		return mx;
 	}
 
-	static void countSort(int arr[], int n, int exp) {
+	void countSort(int arr[], int n, int exp) {
 		int output[] = new int[n];
 		int i;
 		int count[] = new int[10];
 		Arrays.fill(count, 0);
 		for (i = 0; i < n; i++) {
 			compareNum++;
+      if (arr[i] < 0) {
+        arr[i] = -arr[i];
+      }
 			count[(arr[i] / exp) % 10]++;
 			// Change count[i] so that count[i] now contains
 			// actual position of this digit in output[]
@@ -47,7 +50,7 @@ class RadixSort {
 		}
 	}
 
-	static void radixsort(int arr[], int n) { // Find the maximum number to know number of digits
+	void radixsort(int arr[], int n) { // Find the maximum number to know number of digits
 		int m = getMax(arr, n);
 		for (int exp = 1; m / exp > 0; exp *= 10) {
 			compareNum++;
@@ -55,9 +58,8 @@ class RadixSort {
 		}
 	}
 
-	static void print(int arr[], int n) {
+	void print(int arr[], int n) {
 		for (int i = 0; i < n; i++) {
-			compareNum++;
 			System.out.print(arr[i] + " ");
 		}
 	}

@@ -1,9 +1,9 @@
 
 public class SelectionSort {
 	/** The method for sorting the numbers */
-	public static int compareNum; //static variables.
-	public static int moveNum;
-	public static void selectionSort(int[] list) { //int[] list?
+	public long compareNum; //static variables.
+	public long moveNum;
+	public void selectionSort(int[] list) { //int[] list?
 		for (int i = 0; i < list.length -1; i++) {
 			// Find the minimum in the list[i..list.length-1]
 			int currentMin = list[i];
@@ -25,10 +25,10 @@ public class SelectionSort {
 			}
 		}
 	}
-	public int getCompareNum(){
+	public long getCompareNum(){
 		return compareNum;
 	}
-	public int getMoveNum(){
+	public long getMoveNum(){
 		return moveNum;
 	}
 }

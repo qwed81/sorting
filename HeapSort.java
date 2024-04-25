@@ -30,10 +30,10 @@ public class HeapSort {
 			System.out.println(list[i] + " ");
 		}
 	}
-	public int getCompareNum(){
+	public static int getCompareNum(){
 		return compareNum;
 	} //getter methods.
-	public int getMoveNum(){
+	public static int getMoveNum(){
 		return moveNum;
 	}
 	

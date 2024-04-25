@@ -1,9 +1,10 @@
 
 public class InsertionSort {
 	/**The method for sorting the numbers */
-	public static int compareNum; //static variables.
-	public static int moveNum;
-	public static void insertionSort(int[] list) {
+	public int compareNum; //static variables.
+	public int moveNum;
+
+	public void insertionSort(int[] list) {
 		for (int i = 1; i < list.length; i++) {
 			compareNum++;
 			/** Insert list[i] into a sorted sublist list[0..i-1] so that 
